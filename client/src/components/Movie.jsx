@@ -5,7 +5,7 @@ class Movie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      watched: 'not seen',
+      watched: 'unseen',
     }
   }
 

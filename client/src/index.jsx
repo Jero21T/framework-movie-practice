@@ -49,7 +49,7 @@ class MovieList extends React.Component {
 
  
   isWatched(movie){
-  
+   return true
   }
 
   isUnWatched(movie){
@@ -57,7 +57,11 @@ class MovieList extends React.Component {
   }
 
   displayWatched(){
-  
+  var filteredWatched = movieData.filter(function(movie){
+    return isWatched(movie)
+  })
+
+  this.setState({movies: filteredWatched})
   }
 
   displayUnWatched(){
