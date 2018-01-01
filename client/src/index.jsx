@@ -47,14 +47,33 @@ class MovieList extends React.Component {
    this.setState({movies: movieData})
   }
 
+ 
+  isWatched(movie){
+  
+  }
+
+  isUnWatched(movie){
+   
+  }
+
+  displayWatched(){
+  
+  }
+
+  displayUnWatched(){
+  
+  }
+
   render() {
     return (
       <div>
       <AddMovie movieData={movieData} updateMovieList={this.fetchMovieData.bind(this)}  />
       <Search handleButtonClick={this.handleButtonClick.bind(this)} handleChange={this.handleChange.bind(this)}  />
+      <button onClick={this.displayWatched.bind(this)}>Watched</button>
+      <button onClick={this.displayUnWatched.bind(this)}>to Watch</button>
       <ul>
         {this.state.movies.map(currentMovie =>
-          <Movie movie={currentMovie} key={currentMovie.title} />)
+          <Movie movie={currentMovie} key={currentMovie.title} isWatched={this.isWatched.bind(this)} isUnWatched={this.isUnWatched.bind(this)} />)
         }
       </ul>
       </div>
